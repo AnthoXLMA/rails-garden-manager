@@ -1,6 +1,6 @@
-Garden.destroy_all
+Playground.destroy_all
 
-garden_names = [
+playground_names = [
   "French garden",
   "My Cute Balcony",
   "English garden",
@@ -10,21 +10,21 @@ garden_names = [
   "Magic garden"
 ]
 
-garden_names.each do |garden_name|
-  garden_request = RestClient.get("https://source.unsplash.com/1200x700/?garden")
-  garden = Garden.new(
-      name: garden_name,
-      banner_url: garden_request.request.url
+playground_names.each do |playground_name|
+  playground_request = RestClient.get("https://source.unsplash.com/1200x700/?basketball")
+  playground = Playground.new(
+      name: playground_name,
+      banner_url: playground_request.request.url
     )
-  garden.save!
+  playground.save!
   3.times do
-    plant_request = RestClient.get("https://source.unsplash.com/400x300/?flower")
-    plant = Plant.new(
+    event_request = RestClient.get("https://source.unsplash.com/400x300/?event")
+    event = Event.new(
       name: Faker::FunnyName.name,
-      image_url: plant_request.request.url
+      image_url: event_request.request.url
     )
-    plant.garden = garden
-    plant.save!
+    event.playground = playground
+    event.save!
     sleep(2)
   end
 end
