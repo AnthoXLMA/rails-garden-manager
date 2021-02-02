@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'gardens#index'
+  root to: 'playgrounds#index'
 
-  resources :gardens, only: [:index, :show, :new, :create] do
-    resources :plants, only: [:create]
+  resources :playgrounds, only: [:index, :show, :new, :create] do
+    resources :events, only: [:create]
   end
-  resources :plants, only: [:destroy]
+  resources :events, only: [:destroy]
 end

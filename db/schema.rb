@@ -15,21 +15,26 @@ ActiveRecord::Schema.define(version: 2019_11_25_113109) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "gardens", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
+    t.bigint "playground_id"
     t.string "name"
-    t.string "banner_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "plants", force: :cascade do |t|
-    t.bigint "garden_id"
-    t.string "name"
+    t.string "location"
+    t.integer "reward"
+    t.integer "price"
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["garden_id"], name: "index_plants_on_garden_id"
+    t.index ["playground_id"], name: "index_events_on_playground_id"
   end
 
-  add_foreign_key "plants", "gardens"
+  create_table "playgrounds", force: :cascade do |t|
+    t.string "name"
+    t.string "banner_url"
+    t.string "location"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "events", "playgrounds"
 end
