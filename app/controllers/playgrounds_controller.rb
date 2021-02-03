@@ -5,7 +5,7 @@ class PlaygroundsController < ApplicationController
 
   def show
     @playground = Playground.find(params[:id])
-    @event = event.new
+    @event = Event.new
     @events = @playground.events
   end
 
@@ -25,6 +25,6 @@ class PlaygroundsController < ApplicationController
   private
 
   def playground_params
-    params.require(:playground).permit(:name, :banner_url)
+    params.require(:playground).permit(:name, :location, :banner_url)
   end
 end
