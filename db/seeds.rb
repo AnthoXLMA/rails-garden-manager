@@ -2,13 +2,13 @@ Category.destroy_all
 Playground.destroy_all
 
 playground_names = [
-  "French garden",
+  "Brooklyn Temple",
   "My Cute Balcony",
-  "English garden",
-  "Flowered patio",
-  "Garden in Japan",
-  "Walk among flowers",
-  "Magic garden"
+  "English playground",
+  "Court in Jackson",
+  "Paris Tour Eiffel",
+  "Growing Career Top Court",
+  "Magic Garden"
 ]
 
 playground_names.each do |playground_name|
@@ -23,6 +23,7 @@ playground_names.each do |playground_name|
     event_request = RestClient.get("https://source.unsplash.com/400x300/?event")
     event = Event.new(
       name: Faker::FunnyName.name,
+      # date: "31-10-2022",
       price: "12",
       reward: "1000",
       image_url: event_request.request.url
