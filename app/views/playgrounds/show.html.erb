@@ -17,7 +17,7 @@
       <%= simple_form_for [ @playground, @event ] do |f| %>
         <%= f.input :name, placeholder: "Give a name to your challenge, game, or tournament" %>
         <%= f.input :date, placeholder: "Type here the date of your event" %>
-        <%= f.input :category, placeholder: "Tournament, Game, Training,Dunk Contest, 3pts Challenges?" %>
+        <%= f.input :category_id, placeholder: "Tournament, Game, Training,Dunk Contest, 3pts Challenges?" %>
         <%= f.input :price, placeholder: "Price to participate" %>
         <%= f.input :reward, placeholder: "Let's talk about the reward..." %>
         <%= f.input :image_url, placeholder: "https://some_nice_image_found_on_google.jpg" %>

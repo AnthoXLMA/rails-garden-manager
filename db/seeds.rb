@@ -1,5 +1,5 @@
-Playground.destroy_all
 Category.destroy_all
+Playground.destroy_all
 
 playground_names = [
   "French garden",
@@ -15,6 +15,7 @@ playground_names.each do |playground_name|
   playground_request = RestClient.get("https://source.unsplash.com/1200x700/?basketball")
   playground = Playground.new(
       name: playground_name,
+      location: 'chicago',
       banner_url: playground_request.request.url
     )
   playground.save!
@@ -22,6 +23,8 @@ playground_names.each do |playground_name|
     event_request = RestClient.get("https://source.unsplash.com/400x300/?event")
     event = Event.new(
       name: Faker::FunnyName.name,
+      price: "12",
+      reward: "1000",
       image_url: event_request.request.url
     )
     event.playground = playground
