@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_113109) do
+ActiveRecord::Schema.define(version: 2021_02_03_105957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_113109) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
     t.index ["playground_id"], name: "index_events_on_playground_id"
   end
 
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_113109) do
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
   end
 
   add_foreign_key "events", "playgrounds"
