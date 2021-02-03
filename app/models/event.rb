@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :playground
+  belongs_to :category
 
   validates :name, presence: true, uniqueness: { scope: :playground_id }
   # validates :location, presence: true, uniqueness: { scope: :playground_id }

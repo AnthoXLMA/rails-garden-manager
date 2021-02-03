@@ -1,4 +1,5 @@
 Playground.destroy_all
+Category.destroy_all
 
 playground_names = [
   "French garden",
@@ -27,4 +28,19 @@ playground_names.each do |playground_name|
     event.save!
     sleep(2)
   end
+end
+
+category_names = [
+  "Dunk Contest",
+  "Tournament",
+  "Games",
+  "Training",
+  "3pts Challenge"
+]
+
+category_names.each do |category_name|
+  category = Category.new(
+    name:category_name
+    )
+  category.save!
 end

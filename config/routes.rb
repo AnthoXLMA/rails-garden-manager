@@ -4,5 +4,10 @@ Rails.application.routes.draw do
   resources :playgrounds, only: [:index, :show, :new, :create] do
     resources :events, only: [:create]
   end
+
   resources :events, only: [:destroy]
+
+  resources :categories, only: [:index, :show, :new, :create] do
+    resources :events, only: [:create]
+  end
 end
