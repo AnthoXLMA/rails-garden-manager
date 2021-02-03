@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= image_path('banner_basket.jpg') %>)">
   <div class="container">
     <h1>Ground Trotters</h1>
+    <p>The Nomad BasketBall Players Community</p>
     <p>Make your life a basket ball legend</p>
     <%= link_to "Discover", "#how", class: "btn btn-flat" %>
   </div>
@@ -37,7 +38,7 @@
     </div>
   </div>
   <div class="section">
-    <h2 class="text-center">Our Community Best Events</h2>
+    <h2 class="text-center">Our Community Best Playgrounds</h2>
     <div class="cards">
       <% @playgrounds.each do |playground| %>
         <%= render "playground_card", playground: playground %>

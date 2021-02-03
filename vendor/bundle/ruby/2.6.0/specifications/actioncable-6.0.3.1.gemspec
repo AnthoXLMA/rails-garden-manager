@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+c# -*- encoding: utf-8 -*-
 # stub: actioncable 6.0.3.1 ruby lib
 
 Gem::Specification.new do |s|

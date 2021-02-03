@@ -25,6 +25,6 @@ class PlaygroundsController < ApplicationController
   private
 
   def playground_params
-    params.require(:playground).permit(:name, :banner_url)
+    params.require(:playground).permit(:name, :location, :banner_url)
   end
 end
